@@ -55,27 +55,40 @@ int main()
         // sleep_ms(1000);
         // npClear();
         // for(int i = 0; i<5;i++)
-        //     setLEDxy(3,i,255,0,0);
+        //   for(int j=0; j<5;j++) setLEDxy(j,i,100,0,0);
         // npWrite(); // Escreve os dados nos LEDs.
         // sleep_ms(1000);
         // npClear();
         // for(int i = 0; i<5;i++)
-        //     setLEDxy(1,i,0,255,0);
+        //   for(int j=0; j<5;j++)  setLEDxy(j,i,0,100,0);
         // npWrite(); // Escreve os dados nos LEDs.
         // sleep_ms(1000);
         // npClear();
         // for(int i = 0; i<5;i++)
-        //     setLEDxy(2,i,255,255,0);
+        //   for(int j=0; j<5;j++) setLEDxy(j,i,50,50,0);
         // npWrite(); // Escreve os dados nos LEDs.
         // sleep_ms(1000);
 
         /*Exemplo 2: Contador de 9s com reset automático*/
         static int i = 9;
-        setLEDnumber(i,100,0,0);
+        setLEDnumber(i,80,0,0);
         if(i>0)
           i--;
         else
           i=9;
         sleep_ms(1000);
+
+        /*Exemplo 3: Varredor de linhas*/
+        // static int i = 4;
+        // npClear();
+        // setLEDline(i,80,0,0);
+        // npWrite(); // Escreve os dados nos LEDs.
+        // if(i>0)
+        //   i--;
+        // else
+        //   i=4;
+        // sleep_ms(1000);
+
+
     }
 }

@@ -85,15 +85,15 @@ int getIndex(int x, int y)
 /**
  * Define a cor de um LED específico na matriz, com base nas coordenadas (x, y).
  * 
- * @param x A coluna (0 a 4).
- * @param y A linha (0 a 4).
+ * @param y A coluna (0 a 4).
+ * @param x A linha (0 a 4).
  * @param r O valor da componente vermelha da cor (0-255).
  * @param g O valor da componente verde da cor (0-255).
  * @param b O valor da componente azul da cor (0-255).
  */
-void setLEDxy(const uint x, const uint y, const uint8_t r, const uint8_t g, const uint8_t b)
+void setLEDxy(const uint y, const uint x, const uint8_t r, const uint8_t g, const uint8_t b)
 {
-    int index = getIndex(x, y);  // Converte as coordenadas para o índice linear.
+    int index = getIndex(y, x);  // Converte as coordenadas para o índice linear.
     npSetLED(index, r, g, b);    // Define a cor para o LED no índice calculado.
 }
 
@@ -192,4 +192,37 @@ void setLEDnumber(const int number, const uint8_t r, const uint8_t g, const uint
     }
 
     npWrite();  // Atualiza a matriz de LEDs com os novos valores.
+}
+
+/**
+ * Exibe uma linha na matriz 5x5.
+ * 
+ * @param line A linha selecionada (0-4).
+ * @param r O valor da componente vermelha da cor (0-255).
+ * @param g O valor da componente verde da cor (0-255).
+ * @param b O valor da componente azul da cor (0-255).
+ */
+void setLEDline(const int line, const uint8_t r, const uint8_t g, const uint8_t b)
+{
+    for (int i = 0; i < 5; i++)
+    {
+        setLEDxy(i, line, r, g, b);
+    }
+
+}
+
+/**
+ * Exibe uma coluna na matriz 5x5.
+ * 
+ * @param row A coluna selecionada (0-4).
+ * @param r O valor da componente vermelha da cor (0-255).
+ * @param g O valor da componente verde da cor (0-255).
+ * @param b O valor da componente azul da cor (0-255).
+ */
+void setLEDrow(const int row, const uint8_t r, const uint8_t g, const uint8_t b)
+{
+    for (int i = 0; i < 5; i++)
+    {
+        setLEDxy(row, i, r, g, b);
+    }
 }

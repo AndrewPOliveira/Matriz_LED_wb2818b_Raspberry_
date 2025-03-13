@@ -38,9 +38,15 @@ void npWrite();
 int getIndex(int x, int y);
 
 // Função para configurar a cor de um LED específico usando suas coordenadas (x, y) na matriz.
-void setLEDxy(const uint x, const uint y, const uint8_t r, const uint8_t g, const uint8_t b);
+void setLEDxy(const uint y, const uint x, const uint8_t r, const uint8_t g, const uint8_t b);
 
 // Função para mostrar um número (de 0 a 9) na matriz de LEDs, com a cor especificada para os LEDs acesos.
 void setLEDnumber(const int number, const uint8_t r, const uint8_t g, const uint8_t b);
+
+// Função para atribuir uma cor RGB a uma linha na matriz de LED.
+void setLEDline(const int line, const uint8_t r, const uint8_t g, const uint8_t b);
+
+// Função para atribuir uma cor RGB a uma coluna na matriz de LED.
+void setLEDrow(const int row, const uint8_t r, const uint8_t g, const uint8_t b);
 
 #endif // MATRIZLED_H
